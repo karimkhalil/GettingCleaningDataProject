@@ -51,10 +51,10 @@ data <- rbind(train_data,test_data)
 
 # Save tidy data into output file
 setwd("../")
-write.table(data,"Tidy_data.txt")
+write.table(data,"Tidy_data.txt",row.name=FALSE)
 
 # Now we create a second data set with the average for each variable, per subject 
 # per activity
 
 avgs <- aggregate(data[,1:79],list(subject=data$subject_ID,activity=data$activit_ID),mean)
-write.table(avgs,"Tidy_data2_avgs.txt")
+write.table(avgs,"Tidy_data2_avgs.txt",row.name=FALSE)
